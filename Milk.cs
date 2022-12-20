@@ -1,7 +1,10 @@
-﻿
-class Milk:Product
+﻿class Milk : Product
 {
-    public int Volume = 20;
-    public string FatRate = "7%";
+    public double Volume { get; set; }
+    public double FatRate { get; set; }
 
+    public Milk(string name):base(name)
+    {
+
+    }
 }

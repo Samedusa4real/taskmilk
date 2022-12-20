@@ -1,50 +1,81 @@
 ﻿class Product
 {
-    public string Name
-    {
+    private string _name;
+    public string Name 
+    { 
         get
         {
-            return Name;
-        }
+            return _name;
+        } 
+        
         set
         {
-            if (string.IsNullOrWhiteSpace(value) || value.Length == 0)
+            if(string.IsNullOrWhiteSpace(value) || value.Length > 30)
             {
-                Console.WriteLine("WRONG PRODUCT");
+                Console.WriteLine("WRONG INPUT!");
             }
             else
             {
-                Name = value;
+                value = _name;
             }
-        }
+        } 
     }
 
-    public int Price = 30;
-
-    private int Count
+    private double _price;
+    public double Price
     {
-        get { return Price; }
-
+        get
+        {
+            return _price;
+        }
         set
         {
             if (value > 0)
             {
-                Count = value;
+                _price = value;
             }
             else
             {
-                Console.WriteLine("COUNT CANT BE LESS THAN '0'");
+                Console.WriteLine("WRONG PRICE!");
+            }
+        }
+    }
+    private int _count;
+    public int Count
+    {
+        get
+        {
+            return _count;
+        }
+        set
+        {
+            if (value > 0)
+            {
+                _count = value;
+            }
+            else if(value == 0)
+            {
+                Console.WriteLine("OUT OF STOCK!");
+            }
+            else
+            {
+                Console.WriteLine("SOMETHING WENT WRONG!");
             }
         }
     }
 
-    private int TotalIncome = 0;
+    private double TotalIncome;
+
+    public Product(string name)
+    {
+        this.Name = name;
+    }
 
     public void Sell()
     {
-        if (Count > 0)
+        if(Count>0)
         {
-            Count -= 1;
+            Count--;
             TotalIncome += Price;
         }
         else

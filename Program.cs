@@ -1,27 +1,14 @@
-﻿//Console.WriteLine("WELCOME! PLEASE CHOOSE THE PRODUCT YOU WANT TO BUY!");
-//Console.WriteLine("1.MILK");
-//Console.WriteLine("2.FLOUR (OUT OF STOCK!)");
-//Console.WriteLine("3.SUGAR (OUT OF STOCK!)");
+﻿Milk milk = new Milk("Nesquik");
 
-//Product product = new Product("Milk", 5, 30);
+milk.Count = 5;
+milk.Price = 4;
 
-//string click = Console.ReadLine();
-
-//switch (click)
-//{
-//    case "1":
-//        Console.WriteLine(product.name);
-//    break;
-
-//    default: Console.WriteLine("CHOOSE CORRECT");
-//    break;
-//}
-
-Product milk = new Product();
-Console.WriteLine(milk.Name);
+Console.WriteLine($"{milk.Count} {milk.Price}");
 
 
-
-
-
-
+milk.Sell();
+milk.Sell();
+milk.Sell();
+milk.Sell();
+milk.Sell();
+milk.Sell();
